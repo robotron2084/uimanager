@@ -1,0 +1,19 @@
+{
+  "name": "com.enemyhideout.uimanager",
+  "version": "0.0.1",
+  "displayName": "UI Manager",
+  "description": "A basic UI manager for handling screens and modals, mainly for my own usage.",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "documentationUrl": "https://github.com/robotron2084/uimanager",
+  "changelogUrl": "https://github.com/robotron2084/uimanager/blob/main/changelog.md",
+  "licensesUrl": "https://github.com/robotron2084/uimanager/blob/main/LICENSE",
+  "dependencies": { },
+  "keywords": [  ],
+  "author": {
+    "name": "Chris Hill",
+    "email": "chris@enemyhideout.com",
+    "url": "https://www.enemyhideout.com"
+  },
+  "samples": []
+}
