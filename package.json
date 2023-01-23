@@ -15,5 +15,11 @@
     "email": "chris@enemyhideout.com",
     "url": "https://www.enemyhideout.com"
   },
-  "samples": []
+  "samples": [
+    {
+      "displayName": "UIManager System Example",
+      "description": "Example usage of UI Manager screen types.",
+      "path": "Samples~/UIManager.BasicExample"
+    }
+  ]
 }
