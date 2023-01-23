@@ -87,6 +87,7 @@ namespace com.enemyhideout.ui
       screen.Transform.localPosition = pos;
       pos.z -= _shieldDepth;
       _shield.Transform.localPosition = pos;
+      _shield.Transform.SetSiblingIndex(screen.Transform.GetSiblingIndex()-1);
       yield return screen.TransitionIn();
     }
     
