@@ -134,8 +134,9 @@ namespace com.enemyhideout.ui
         var pos = farthestForwardScreen.Transform.localPosition;
         pos.z -= _shieldDepth;
         _shield.Transform.localPosition = pos;
+        _shield.Transform.SetAsLastSibling();
         int siblingIndex = farthestForwardScreen.Transform.GetSiblingIndex();
-        _shield.Transform.SetSiblingIndex(Math.Max(0,siblingIndex-1));
+        _shield.Transform.SetSiblingIndex(siblingIndex);
         
       }
 

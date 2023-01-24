@@ -12,6 +12,7 @@ namespace com.enemyhideout.ui
     private Animator _animator;
     private Signaller _signaller;
     private int _result;
+    private bool _despawnOnDismiss;
 
     public int Result
     {
@@ -59,6 +60,10 @@ namespace com.enemyhideout.ui
       _animator.SetBool("Visible", false);
       yield return _signaller.WaitForSignal(Signaller.Complete);
       _signaller.RaiseSignal(Dismissed);
+      if (_despawnOnDismiss)
+      {
+        Despawn();
+      }
     }
 
     public IEnumerator WaitForClose(object listener=null)
@@ -87,6 +92,12 @@ namespace com.enemyhideout.ui
     {
       yield return Manager.WaitUntilActive(gameObject);
       yield return _signaller.WaitForSignal(ResultSelected);
+    }
+
+    public void DismissAndDespawn()
+    {
+      _despawnOnDismiss = true;
+      Dismiss();
     }
   }
 }
