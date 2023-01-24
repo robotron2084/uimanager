@@ -43,7 +43,6 @@ namespace com.enemyhideout.ui
       ConfirmButtonData, CancelButtonData
     };
 
-
     public void InitConfirm(string title, string message)
     {
       Init(title, message, ConfirmButtons);

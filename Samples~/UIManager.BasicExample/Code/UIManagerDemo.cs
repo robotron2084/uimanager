@@ -11,6 +11,7 @@ namespace com.enemyhideout.ui.example
 
     [SerializeField] private UIScreen WelcomePrefab;
     [SerializeField] private UIScreen SelectionPrefab;
+    [SerializeField] private UIScreen InfiniteModalPrefab;
 
 
     private IEnumerator Start()
@@ -20,34 +21,50 @@ namespace com.enemyhideout.ui.example
       
       //create an instance of the welcome screen.
       var welcomeScreen = _uiManager.ShowPrefab(WelcomePrefab);
-      // wait for it to close
+      // wait for it to close (this causes the click shield to hide, then show, which is intended.
       yield return welcomeScreen.WaitForClose();
-      // we're done with it, let's go ahead and clean it up.
+      // we're done with it, let's go ahead and clean it up. We always need to manually despawn modals since the modal
+      // contains information about the user's interaction.
       welcomeScreen.Despawn();
       
       var selectionScreen = _uiManager.ShowPrefab(SelectionPrefab);
       while (true)
       {
         yield return selectionScreen.WaitForResult();
-        //based upon the result, lets's show another ui.
-        var subScreen = ScreenForResult(selectionScreen.Result);
-        yield return subScreen.WaitForResult();
-        var confirm =_uiManager.ShowConfirm(null, $"Your Choice was {subScreen.Result}");
-        subScreen.Despawn();
-        yield return confirm.WaitForClose();
-      }
+        if (selectionScreen.Result == 0)
+        {
+          var subScreen = _uiManager.ShowConfirmCancel("Here is a title", "This is the message.");
+          yield return subScreen.WaitForResult();
+          var confirm =_uiManager.ShowConfirm(null, $"Your Choice was {subScreen.Result}");
+          subScreen.Despawn();
+          yield return confirm.WaitForClose();
+          confirm.Despawn();
+          
+        }
 
+        if (selectionScreen.Result == -1)
+        {
+          yield return ShowInfiniteModal();
+        }
+      }
     }
 
-    private UIScreen ScreenForResult(int selectionScreenResult)
+    IEnumerator ShowInfiniteModal()
     {
-      switch (selectionScreenResult)
+      var modal = _uiManager.ShowPrefab(InfiniteModalPrefab);
+      
+      //while()
+      yield return modal.WaitForResult();
+      if (modal.Result == 0)
       {
-        case UIScreen.Confirm:
-          return _uiManager.ShowConfirmCancel("This is the title.", "This is the message.");
+        //pop another one onto the stack.
+        yield return ShowInfiniteModal();
       }
-
-      return null;
+      else
+      {
+        modal.Dismiss();
+        modal.Despawn();
+      }
     }
   }
 }

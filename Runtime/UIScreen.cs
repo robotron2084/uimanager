@@ -61,9 +61,9 @@ namespace com.enemyhideout.ui
       _signaller.RaiseSignal(Dismissed);
     }
 
-    public IEnumerator WaitForClose()
+    public IEnumerator WaitForClose(object listener=null)
     {
-      yield return _signaller.WaitForSignal(Dismissed);
+      yield return _signaller.WaitForSignal(Dismissed, listener);
     }
 
     public void Despawn()

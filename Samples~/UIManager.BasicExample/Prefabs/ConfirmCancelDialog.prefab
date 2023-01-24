@@ -523,7 +523,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6806169293098042448, guid: f60c2c9b8ee3dec42bcaa66b0289292c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f60c2c9b8ee3dec42bcaa66b0289292c, type: 3}
 --- !u!224 &1658378933083835811 stripped
 RectTransform:
@@ -601,20 +602,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 790152581783261452, guid: f60c2c9b8ee3dec42bcaa66b0289292c, type: 3}
   m_PrefabInstance: {fileID: 9134624546567840740}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3499672898838507157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8373206790677066472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
-  m_VerticalFit: 2
 --- !u!114 &118679851630020320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,3 +628,17 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &3499672898838507157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8373206790677066472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2

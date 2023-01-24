@@ -186,9 +186,7 @@ MonoBehaviour:
   _uiManager: {fileID: 8296699}
   WelcomePrefab: {fileID: 7375204245526604472, guid: 9f2aa4e8e29beb047bd1d9e9541cbf60, type: 3}
   SelectionPrefab: {fileID: 1597871718160185712, guid: 551df24fc015fc14ea3a051feaa1c482, type: 3}
-  SubScreen1Prefab: {fileID: 2355640208176359348, guid: 057490e3f1e4c8945a86efd83ae557a5, type: 3}
-  SubScreen2Prefab: {fileID: 2355640208176359348, guid: 057490e3f1e4c8945a86efd83ae557a5, type: 3}
-  ClickShield: {fileID: 281286787146013660, guid: 066374994233e314280a1af6a586e80a, type: 3}
+  InfiniteModalPrefab: {fileID: 1597871718160185712, guid: 595088d46ab7b5149958abff2938f29d, type: 3}
 --- !u!1 &518473770
 GameObject:
   m_ObjectHideFlags: 0

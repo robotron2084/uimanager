@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This example shows off some basic modal functionality. Click the button
-    below to close this modal and continue.
+  m_text: This will show modals until the camera runs out of room, and then probably
+    break.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4203f6a815e6eb4ba11948d39d9fdd3, type: 2}
   m_sharedMaterial: {fileID: -1896304728732013093, guid: f4203f6a815e6eb4ba11948d39d9fdd3, type: 2}
@@ -166,7 +166,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5571314019413144403}
-  - {fileID: 6557778324311994879}
+  - {fileID: 8470840714904907601}
   m_Father: {fileID: 2422817092431123303}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!1001 &2614623386386752711
+--- !u!1001 &776468541167581801
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -222,7 +222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3257862102177223595, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6229234278391557281, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_Name
@@ -230,7 +230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7087758862924814137, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_text
-      value: Lots O' Modals
+      value: Show Another
       objectReference: {fileID: 0}
     - target: {fileID: 9171838724774663480, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_Pivot.x
@@ -318,10 +318,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
---- !u!224 &6557778324311994879 stripped
+--- !u!224 &8470840714904907601 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9171838724774663480, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
-  m_PrefabInstance: {fileID: 2614623386386752711}
+  m_PrefabInstance: {fileID: 776468541167581801}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3610094890003441259
 PrefabInstance:
@@ -344,7 +344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3257862102177223595, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6229234278391557281, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_Name
@@ -352,7 +352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7087758862924814137, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_text
-      value: Confirm/Cancel
+      value: Close
       objectReference: {fileID: 0}
     - target: {fileID: 9171838724774663480, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_Pivot.x
@@ -454,7 +454,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6806169293098042452, guid: f60c2c9b8ee3dec42bcaa66b0289292c, type: 3}
       propertyPath: m_Name
-      value: SelectionPrefab
+      value: InfiniteModal
       objectReference: {fileID: 0}
     - target: {fileID: 6806169293098042453, guid: f60c2c9b8ee3dec42bcaa66b0289292c, type: 3}
       propertyPath: m_Pivot.x

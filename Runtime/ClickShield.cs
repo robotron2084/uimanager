@@ -25,18 +25,32 @@ namespace com.enemyhideout.ui
       }
     }
 
+    public bool Visible
+    {
+      get
+      {
+        return _animator.GetBool("Visible");
+      }
+    }
+
     public IEnumerator TransitionIn()
     {
       gameObject.SetActive(true);
-      _animator.SetBool("Visible", true);
-      yield return _signaller.WaitForSignal(Signaller.Complete);
+      if (!Visible)
+      {
+        _animator.SetBool("Visible", true);
+        yield return _signaller.WaitForSignal(Signaller.Complete, "TransitionInWait");
+      }
     }
 
     public IEnumerator TransitionOut()
     {
-      _animator.SetBool("Visible", false);
-      yield return _signaller.WaitForSignal(Signaller.Complete);
-      gameObject.SetActive(true);
+      if (Visible)
+      {
+        _animator.SetBool("Visible", false);
+        yield return _signaller.WaitForSignal(Signaller.Complete, "TransitionInWait");
+        gameObject.SetActive(true);
+      }
 
     }
   }
