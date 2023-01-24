@@ -110,21 +110,6 @@ namespace com.enemyhideout.ui
       return screen;
     }
 
-    // public IEnumerator ShowScreenCoroutine(IUIScreen screen)
-    // {
-    //   screen.Manager = this;
-    //   screen.Transform.SetParent(_root, false);
-    //   screens.Add(screen);
-    //   var pos = Vector3.zero;
-    //   pos.z = _step * screens.Count;
-    //   screen.Transform.localPosition = pos;
-    //   pos.z -= _shieldDepth;
-    //   _shield.Transform.localPosition = pos;
-    //   _shield.Transform.SetSiblingIndex(screen.Transform.GetSiblingIndex()-1);
-    //   UpdateShield();
-    // }
-
-
     private void UpdateShield()
     {
       if (screens.Count > 0)
@@ -146,7 +131,8 @@ namespace com.enemyhideout.ui
         _shieldTransition = null;
       }
 
-      StartCoroutine(UpdateShieldRoutine());
+      _shieldTransition = UpdateShieldRoutine();
+      StartCoroutine(_shieldTransition);
     }
 
     private IEnumerator UpdateShieldRoutine()
@@ -175,18 +161,6 @@ namespace com.enemyhideout.ui
     {
       yield return new WaitUntil(() => active.activeSelf);
     }
-    
-
-    // public IEnumerator HideScreenCoroutine(IUIScreen screen)
-    // {
-    //   screens.Remove(screen);
-    //   yield return screen.TransitionOut();
-    //   if (screens.Count > 0)
-    //   {
-    //     var oldScreen = screens[screens.Count - 1];
-    //     yield return oldScreen.TransitionIn();
-    //   }
-    // }
 
   }
 }
