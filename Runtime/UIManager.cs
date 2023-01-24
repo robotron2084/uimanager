@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace com.enemyhideout.ui
 {
-  public class UIManager : MonoBehaviour
+  public class UIManager : MonoBehaviour, IUIController
   {
     [SerializeField]
     private Transform _root;
@@ -97,7 +97,7 @@ namespace com.enemyhideout.ui
 
     public void ShowScreen(IUIScreen screen)
     {
-      screen.Manager = this;
+      screen.Controller = this;
       screen.Transform.SetParent(_root, false);
       screensToShow.Add(screen);
       MarkDirty();
@@ -155,6 +155,11 @@ namespace com.enemyhideout.ui
     {
       screensToHide.Add(screen);
       MarkDirty();
+    }
+
+    public void HideScreen(UIScreen uiScreen)
+    {
+      throw new NotImplementedException();
     }
 
     public IEnumerator WaitUntilActive(GameObject active)

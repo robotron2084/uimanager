@@ -9,7 +9,12 @@ namespace com.enemyhideout.ui.example
     [SerializeField]
     private UIManager _uiManager;
 
+    [SerializeField]
+    private ScreenManager _screenManager;
+
     [SerializeField] private UIScreen WelcomePrefab;
+    [SerializeField] private UIScreen WelcomeScreen1Prefab;
+    [SerializeField] private UIScreen WelcomeScreen2Prefab;
     [SerializeField] private UIScreen SelectionPrefab;
     [SerializeField] private UIScreen InfiniteModalPrefab;
 
@@ -18,14 +23,19 @@ namespace com.enemyhideout.ui.example
     {
       // give unity a sec to catch up so we can see animations effectively.
       yield return new WaitForSeconds(1.0f);
-      
-      //create an instance of the welcome screen.
-      var welcomeScreen = _uiManager.ShowPrefab(WelcomePrefab);
-      // wait for it to close (this causes the click shield to hide, then show, which is intended.
-      yield return welcomeScreen.WaitForClose();
-      // we're done with it, let's go ahead and clean it up. We always need to manually despawn modals since the modal
-      // contains information about the user's interaction.
-      welcomeScreen.Despawn();
+
+      var welcomeScreen = _screenManager.ShowPrefab(WelcomeScreen1Prefab);
+      yield return welcomeScreen.WaitForResult();
+      var welcomeScreen2 = _screenManager.ShowPrefab(WelcomeScreen2Prefab);
+      yield return welcomeScreen2.WaitForResult();
+
+      // //create an instance of the welcome screen.
+      // var welcomeScreen = _uiManager.ShowPrefab(WelcomePrefab);
+      // // wait for it to close (this causes the click shield to hide, then show, which is intended.
+      // yield return welcomeScreen.WaitForClose();
+      // // we're done with it, let's go ahead and clean it up. We always need to manually despawn modals since the modal
+      // // contains information about the user's interaction.
+      // welcomeScreen.Despawn();
       
       var selectionScreen = _uiManager.ShowPrefab(SelectionPrefab);
       while (true)
@@ -52,18 +62,20 @@ namespace com.enemyhideout.ui.example
     IEnumerator ShowInfiniteModal()
     {
       var modal = _uiManager.ShowPrefab(InfiniteModalPrefab);
-      
-      //while()
-      yield return modal.WaitForResult();
-      if (modal.Result == 0)
+
+      while (true)
       {
-        //pop another one onto the stack.
-        yield return ShowInfiniteModal();
-      }
-      else
-      {
-        modal.Dismiss();
-        modal.Despawn();
+        yield return modal.WaitForResult();
+        if (modal.Result == 0)
+        {
+          //pop another one onto the stack.
+          yield return ShowInfiniteModal();
+        }
+        else
+        {
+          modal.DismissAndDespawn();
+          yield break;
+        }
       }
     }
   }

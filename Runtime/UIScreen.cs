@@ -41,11 +41,11 @@ namespace com.enemyhideout.ui
       }
     }
 
-    public UIManager Manager { get; set; }
+    public IUIController Controller { get; set; }
 
     public void Dismiss()
     {
-      Manager.HideScreen(this);
+      Controller.HideScreen(this);
     }
 
     public IEnumerator TransitionIn()
@@ -90,7 +90,7 @@ namespace com.enemyhideout.ui
 
     public IEnumerator WaitForResult()
     {
-      yield return Manager.WaitUntilActive(gameObject);
+      yield return Controller.WaitUntilActive(gameObject);
       yield return _signaller.WaitForSignal(ResultSelected);
     }
 
