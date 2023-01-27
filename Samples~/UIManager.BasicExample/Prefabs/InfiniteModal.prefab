@@ -209,6 +209,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2987046428665644809}
     m_Modifications:
     - target: {fileID: 3257862102177223595, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257862102177223595, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
       objectReference: {fileID: 0}
@@ -227,6 +231,10 @@ PrefabInstance:
     - target: {fileID: 6229234278391557281, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_Name
       value: BaseButton (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229234278391557281, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7087758862924814137, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_text
@@ -331,6 +339,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2987046428665644809}
     m_Modifications:
     - target: {fileID: 3257862102177223595, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257862102177223595, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
       objectReference: {fileID: 0}
@@ -353,6 +365,10 @@ PrefabInstance:
     - target: {fileID: 7087758862924814137, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_text
       value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883164175569840720, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
+      propertyPath: _result
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9171838724774663480, guid: cb43bb0b895079c4b831ea216045ae8e, type: 3}
       propertyPath: m_Pivot.x

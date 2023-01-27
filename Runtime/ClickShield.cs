@@ -49,7 +49,7 @@ namespace com.enemyhideout.ui
       {
         _animator.SetBool("Visible", false);
         yield return _signaller.WaitForSignal(Signaller.Complete, "TransitionInWait");
-        gameObject.SetActive(true);
+        gameObject.SetActive(false);
       }
 
     }

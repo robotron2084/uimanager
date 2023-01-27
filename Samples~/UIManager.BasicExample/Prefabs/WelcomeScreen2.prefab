@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Show Modal
       objectReference: {fileID: 0}
+    - target: {fileID: 6735986077843136875, guid: cda51f758f50d0745b0188c64d0b485c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8092203219168971079, guid: cda51f758f50d0745b0188c64d0b485c, type: 3}
       propertyPath: m_text
       value: "There are a few ways to show screens: \n\nIn sequence like these welcome

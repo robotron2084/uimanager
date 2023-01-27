@@ -19,6 +19,7 @@ namespace com.enemyhideout.ui
     {
       public string Label;
       public int Result;
+      public ButtonBehavior Behavior = ButtonBehavior.SetResultAndDismiss;
     }
 
     public static ButtonData ConfirmButtonData = new ButtonData
@@ -58,7 +59,7 @@ namespace com.enemyhideout.ui
       gameObject.name = title + "-"+string.Join("-", buttons.Select(x => x.Label));
       InitLabel(_titleLabel, title);
       InitLabel(_messageLabel, message);
-      BuildButtons(_buttonsContainer, SetResultAndDismiss, _buttonPrefab, buttons);
+      BuildButtons(_buttonsContainer, _buttonPrefab, buttons);
     }
 
     private static void InitLabel(TMP_Text label, string text)
@@ -69,7 +70,6 @@ namespace com.enemyhideout.ui
     }
 
     private static void BuildButtons(Transform root,
-      Action<int> setResultCallback,
       ButtonWithLabel buttonPrefab,
       IEnumerable<ButtonData> buttons)
     {
@@ -77,8 +77,9 @@ namespace com.enemyhideout.ui
       {
         ButtonWithLabel button = Instantiate(buttonPrefab);
         button.transform.SetParent(root, false);
-        button.Label.text = buttonData.Label;
-        button.Button.onClick.AddListener(() => setResultCallback(buttonData.Result));
+        button.SetBehaviour(buttonData);
+        ResultButton result = button.GetComponent<ResultButton>();
+        result.SetBehaviour(buttonData);
       }
     }
   }

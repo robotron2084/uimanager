@@ -8,5 +8,11 @@ namespace com.enemyhideout.ui
   {
     public TMP_Text Label;
     public Button Button;
+    
+    public void SetBehaviour(ConfirmCancelDialog.ButtonData data)
+    {
+      Label.text = data.Label;
+    }
+
   }
 }

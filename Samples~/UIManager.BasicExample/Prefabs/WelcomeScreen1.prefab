@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 795467201988188304, guid: cda51f758f50d0745b0188c64d0b485c, type: 3}
+      propertyPath: _behaviour
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735986077843136875, guid: cda51f758f50d0745b0188c64d0b485c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8092203220401327393, guid: cda51f758f50d0745b0188c64d0b485c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -93,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8092203220401327398, guid: cda51f758f50d0745b0188c64d0b485c, type: 3}
       propertyPath: m_Name
-      value: BaseScreen
+      value: WelcomeScreen1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cda51f758f50d0745b0188c64d0b485c, type: 3}

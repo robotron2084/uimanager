@@ -164,5 +164,11 @@ namespace com.enemyhideout.ui
       _despawnOnDismiss = true;
       Dismiss();
     }
+
+    public void SetResultAndDespawn(int result)
+    {
+      SetResult(result);
+      DismissAndDespawn();
+    }
   }
 }
