@@ -10,6 +10,11 @@ namespace com.enemyhideout.ui
     [SerializeField]
     private Transform _root;
 
+    public Transform Root
+    {
+      get => _root;
+    }
+
     [SerializeField] private ConfirmCancelDialog ConfirmCancelDialogPrefab;
 
       /// <summary>
