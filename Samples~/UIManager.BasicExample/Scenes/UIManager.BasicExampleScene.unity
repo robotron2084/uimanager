@@ -191,6 +191,7 @@ MonoBehaviour:
   WelcomeScreen2Prefab: {fileID: 651032555547857155, guid: 412d1d1cf90e7dd4da824a293d81d672, type: 3}
   SelectionPrefab: {fileID: 1597871718160185712, guid: 551df24fc015fc14ea3a051feaa1c482, type: 3}
   InfiniteModalPrefab: {fileID: 1597871718160185712, guid: 595088d46ab7b5149958abff2938f29d, type: 3}
+  SubscreenPrefab: {fileID: 6002983719766850885, guid: adfc2dfb4d0d1f24bbeee1b102279bbb, type: 3}
 --- !u!114 &8296702
 MonoBehaviour:
   m_ObjectHideFlags: 0

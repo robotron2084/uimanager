@@ -17,6 +17,7 @@ namespace com.enemyhideout.ui.example
     [SerializeField] private UIScreen WelcomeScreen2Prefab;
     [SerializeField] private UIScreen SelectionPrefab;
     [SerializeField] private UIScreen InfiniteModalPrefab;
+    [SerializeField] private UIScreen SubscreenPrefab;
 
     private IEnumerator Start()
     {
@@ -31,8 +32,6 @@ namespace com.enemyhideout.ui.example
 
       // Now that the animation has played out we'll show our main screen.
       yield return ShowWelcomeScreen2();
-
-
     }
 
     IEnumerator ShowWelcomeScreen2()
@@ -43,9 +42,16 @@ namespace com.enemyhideout.ui.example
         // Wait for the user to make a selection. This doesn't wait for the 
         // screen to animate out like WaitForDismiss().
         yield return welcomeScreen2.WaitForResult();
-
-        // show a modal on top of our screen.
-        yield return ShowSelectionModal();
+        switch (welcomeScreen2.Result)
+        {
+          case 0 :
+            // show a modal on top of our screen.
+            yield return ShowSelectionModal();
+            break;
+          case 1:
+            _screenManager.ShowPrefab(SubscreenPrefab);
+            break;
+        }
         // WelcomeScreen2 does not despawn after being dismissed, so it will stick around forever.
 
       }
